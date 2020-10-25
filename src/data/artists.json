@@ -1,0 +1,47 @@
+[
+    {
+        "first_name": "Stevie",
+        "last_name": "Nicks",
+        "date_of_birth": "May 26, 1948",
+        "music_group": "Fleetwood Mac",
+        "genre": "Rock",
+        "summary": "Stephanie Lynn Nicks is an American singer and songwriter. Nicks is a songwriter and vocalist with Fleetwood Mac, and also performs solo. She is known for her distinctive voice, mystical stage persona and poetic, symbolic lyrics.",
+        "mediaUrl": "https://res.cloudinary.com/dnc06uisc/image/upload/v1599485265/album-app/nicks_ihjutb.jpg"
+    },
+    {
+        "first_name": "Bob",
+        "last_name": "Dylan",
+        "date_of_birth": "May 24, 1941",
+        "music_group": "Bob Dylan",
+        "genre": "Rock",
+        "summary": "Bob Dylan is an American singer-songwriter, author, and visual artist who has been a major figure in popular culture for more than 50 years.",
+        "mediaUrl": "https://res.cloudinary.com/dnc06uisc/image/upload/v1599485262/album-app/bob-dylan_g1hmp1.jpg"
+    },
+    {
+        "first_name": "Neil",
+        "last_name": "Young",
+        "date_of_birth": "November 12, 1945",
+        "music_group": "Buffalo Springfield",
+        "genre": "Rock",
+        "summary": "Neil Percival Young OC OM is a Canadian-American singer-songwriter and activist. After embarking on a music career in the 1960s, he moved to Los Angeles, joining Buffalo Springfield with Stephen Stills, Richie Furay and others.",
+        "mediaUrl": "https://res.cloudinary.com/dnc06uisc/image/upload/v1599485262/album-app/young_uh1y06.jpg"
+    },
+    {
+        "first_name": "Richard",
+        "last_name": "Hall",
+        "date_of_birth": "",
+        "music_group": "September 11, 1965",
+        "genre": "Alt Rock",
+        "summary": "Richard Melville Hall, better known as Moby, is an American musician, songwriter, singer, producer, and animal rights activist. He has sold 20 million records worldwide.",
+        "mediaUrl": "https://res.cloudinary.com/dnc06uisc/image/upload/v1599485266/album-app/moby_dezlpo.jpg"
+    },
+    {
+        "first_name": "Thomas",
+        "last_name": "Yorke",
+        "date_of_birth": "October 7, 1968",
+        "music_group": "Radiohead",
+        "genre": "Alt Rock",
+        "summary": "Thomas Edward Yorke is an English musician and the main vocalist and songwriter of the rock band Radiohead. A multi-instrumentalist, he mainly plays guitar and keyboards, and is known for his falsetto. Yorke was born in Northamptonshire.",
+        "mediaUrl": "https://res.cloudinary.com/dnc06uisc/image/upload/v1599485264/album-app/yorke_x8q0cs.jpg"
+    }
+]

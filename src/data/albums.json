@@ -1,0 +1,38 @@
+[
+    {
+        "title": "OK Computer",
+        "artist": "Radiohead",
+        "studio": "Canned Applause",
+        "release_date": "May 21, 1997",
+        "genre": "Alt Rock",
+        "summary": "OK Computer is the third studio album by English rock band Radiohead, released on 21 May 1997 on EMI subsidiaries Parlophone and Capitol Records. The members of Radiohead self-produced the album with Nigel Godrich, an arrangement they have used for their subsequent albums.",
+        "mediaUrl": "https://res.cloudinary.com/dnc06uisc/image/upload/v1598968523/album-app/715LZJ5qX0L._AC_SL1200__mgrqgo.jpg"
+    },
+    {
+        "title": "Disintegration",
+        "artist": "The Cure",
+        "studio": "Hookend Recording Studios",
+        "release_date": "May 2, 1989",
+        "genre": "Alternative Rock",
+        "summary": "Disintegration is the eighth studio album by English rock band the Cure, released on 2 May 1989 by Fiction Records. The record marks a return to the introspective gothic rock style the band had established in the early 1980s.",
+        "mediaUrl": "https://res.cloudinary.com/dnc06uisc/image/upload/v1598968523/album-app/71wLHxwdHmL._AC_SL1200__lmegsr.jpg"
+    }, 
+    {
+        "title": "It'll End in Tears",
+        "artist": "This Mortal Coil",
+        "studio": "Blackwing Studios",
+        "release_date": "October 1, 1984",
+        "genre": "Gothic Rock",
+        "summary": "It'll End in Tears is the first album released by 4AD collective This Mortal Coil, an umbrella title for a loose grouping of guest musicians and vocalists brought together by label boss Ivo Watts-Russell. The album was released on 1 October 1984, and reached #38 on the UK Albums Chart.",
+        "mediaUrl": "https://res.cloudinary.com/dnc06uisc/image/upload/v1598968522/album-app/714-DiX-qOL._AC_SL1060__pqr8gd.jpg"
+    },
+    {
+        "title": "Rumours",
+        "artist": "Fleetwood Mac",
+        "studio": "Warner Bros. Records",
+        "release_date": "February 4, 1977",
+        "genre": "Rock",
+        "summary": "Rumours is the eleventh studio album by British-American rock band Fleetwood Mac, released on 4 February 1977 by Warner Bros. Records. Largely recorded in California in 1976, it was produced by the band with Ken Caillat and Richard Dashut.",
+        "mediaUrl": "https://res.cloudinary.com/dnc06uisc/image/upload/v1598968523/album-app/71YQa_dEhwL._AC_SL1426__qkzhri.jpg"
+    }  
+]

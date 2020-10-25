@@ -1,0 +1,39 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Dependency directories
+node_modules/
+/node_modules
+jspm_packages/
+/.pnp
+.pnp.js
+
+client/build
+
+server/src/build
+
+# Optional npm cache directory
+.npm
+
+# To do list
+TO-DO.md
+
+# dotenv environment variables file
+.env
+
+# testing
+/coverage
+
+# Pictures
+/server/data/
+
+# misc
+.DS_Store
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
