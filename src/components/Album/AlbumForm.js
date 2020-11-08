@@ -136,7 +136,7 @@ export default function AlbumForm() {
                 <Grid container spacing={2}>
 
                     {/* ALBUM TITLE */}
-                    <Grid item xs={6}>
+                    <Grid item xs={12} sm={6}>
                         <TextField
                             variant="outlined"
                             size="small"
@@ -154,7 +154,7 @@ export default function AlbumForm() {
                     </Grid>
 
                     {/* ALBUM ARTIST */}
-                    <Grid item xs={6}>
+                    <Grid item xs={12} sm={6}>
                         <TextField
                             variant="outlined"
                             size="small"
@@ -170,7 +170,7 @@ export default function AlbumForm() {
                     </Grid>
 
                     {/* ALBUM STUDIO */}
-                    <Grid item xs={3}>
+                    <Grid item xs={12} sm={3}>
                         <TextField
                             variant="outlined"
                             size="small"
@@ -186,7 +186,7 @@ export default function AlbumForm() {
                     </Grid>
 
                     {/* ALBUM PRODUCER */}
-                    <Grid item xs={3}>
+                    <Grid item xs={12} sm={3}>
                         <TextField
                             variant="outlined"
                             size="small"
@@ -201,7 +201,8 @@ export default function AlbumForm() {
                         />
                     </Grid>
 
-                    <Grid item xs={3}>
+                    {/* RELEASE DATE */}
+                    <Grid item xs={12} sm={3}>
                         <TextField
                             variant="outlined"
                             size="small"
@@ -215,7 +216,8 @@ export default function AlbumForm() {
                         />
                     </Grid>
 
-                    <Grid item xs={3}>
+                    {/* GENRE */}
+                    <Grid item xs={12} sm={3}>
                         <TextField
                             label="Genre"
                             variant="outlined"
@@ -230,6 +232,7 @@ export default function AlbumForm() {
                         />
                     </Grid>
 
+                    {/* SUMMARY */}
                     <Grid item xs={12}>
                         <TextField
                             label="Summary"

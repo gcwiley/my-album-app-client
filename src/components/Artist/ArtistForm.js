@@ -131,7 +131,7 @@ export default function ArtistForm() {
                 <Grid container spacing={2}>
 
                     {/* ARTIST FIRST NAME */}
-                    <Grid item xs={6}>
+                    <Grid item xs={12} sm={6}>
                         <TextField
                             variant="outlined"
                             size="small"
@@ -149,7 +149,7 @@ export default function ArtistForm() {
                     </Grid>
 
                     {/* ARTIST LAST NAME */}
-                    <Grid item xs={6}>
+                    <Grid item xs={12} sm={6}>
                         <TextField
                             variant="outlined"
                             size="small"
@@ -166,7 +166,7 @@ export default function ArtistForm() {
                     </Grid>
 
                     {/* ARTIST DATE OF BIRTH */}
-                    <Grid item xs={3}>
+                    <Grid item xs={12} sm={3}>
                         <TextField
                             variant="outlined"
                             size="small"
@@ -182,7 +182,7 @@ export default function ArtistForm() {
                     </Grid>
 
                     {/* ARTIST PLACE OF BIRTH */}
-                    <Grid item xs={3}>
+                    <Grid item xs={12} sm={3}>
                         <TextField
                             variant="outlined"
                             size="small"
@@ -199,7 +199,7 @@ export default function ArtistForm() {
                     </Grid>
 
                     {/* MUSIC GROUP */}
-                    <Grid item xs={6}>
+                    <Grid item xs={12} sm={6}>
                         <TextField
                             variant="outlined"
                             size="small"
