@@ -44,7 +44,10 @@ export default function ArtistDetails() {
     }
 
     return (
-        <Paper variant="outlined" className={classes.paper}>
+        <Paper 
+            variant="outlined" 
+            className={classes.paper}
+        >
 
             <Grid container spacing={0}>
 

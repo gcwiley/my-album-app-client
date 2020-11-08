@@ -1,17 +1,23 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
-import { Grid, Typography, Card, makeStyles} from '@material-ui/core'
 
-// Add MUI GridList Components
-
+// MUI Components
+import { Grid, Card, Typography, Paper, Divider, makeStyles} from '@material-ui/core'
 
 const useStyles = makeStyles((theme) => ({
+    paper: {
+        marginTop: theme.spacing(1),
+        padding: theme.spacing(3),
+    },
+    divider: {
+        marginTop: theme.spacing(1),
+        marginBottom: theme.spacing(2),
+    },
     album_card: {
         width: theme.spacing(23),
         height: theme.spacing(23),
-        marginTop: theme.spacing(4),
-        marginRight: theme.spacing(3)
+        margin: theme.spacing(1),
     },
     album_card_image: {
         width: theme.spacing(23),
@@ -37,22 +43,36 @@ export default function AlbumList() {
     }
 
     return (
-        <>
-            <Typography variant="h5" gutterBottom>
-                My Albums
-            </Typography>
+            <Paper 
+                variant="outlined" 
+                className={classes.paper} >
 
-            <Grid container spacing={0}>
+                <Typography 
+                    variant="h6" 
+                    gutterBottom
+                    color="primary"
+                >
+                    My Albums
+                </Typography>
 
-                {albums.map((album) => (
-                    <Grid item component={Card} key={album._id} className={classes.album_card} elevation={3}>
-                        <Link to={`/album/${album._id}`} >
-                            <img src={album.mediaUrl} className={classes.album_card_image} alt={album.title} />
-                        </Link>
-                    </Grid>
-                ))}
+                <Divider
+                    variant="fullWidth"
+                    light
+                    className={classes.divider}
+                />
 
-            </Grid>
-       </>
+                <Grid container spacing={0}>
+
+                    {albums.map((album) => (
+                        <Grid item component={Card} key={album._id} className={classes.album_card} elevation={3}>
+                            <Link to={`/album/${album._id}`} >
+                                <img src={album.mediaUrl} className={classes.album_card_image} alt={album.title} />
+                            </Link>
+                        </Grid>
+                    ))}
+
+                </Grid>
+
+            </Paper>
     );
 }

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
 import axios from 'axios';
-import { Typography, TextField, Grid, Paper, Button, Backdrop, CircularProgress, Snackbar, makeStyles } from '@material-ui/core';
+import { Typography, TextField, Grid, Paper, Button, Backdrop, CircularProgress, Snackbar, Divider, makeStyles } from '@material-ui/core';
 import Alert from '@material-ui/lab/Alert';
 import CloudUploadIcon from '@material-ui/icons/CloudUpload';
 
@@ -14,6 +14,10 @@ const useStyles = makeStyles((theme) => ({
     backdrop: {
         zIndex:theme.zIndex.drawer + 1,
         color: '#fff'
+    },
+    divider: {
+        marginBottom: theme.spacing(2),
+        marginTop: theme.spacing(1)
     }
 }));
 
@@ -108,16 +112,30 @@ export default function AlbumForm() {
             </Alert>
         </Snackbar>
 
-        <Paper variant="outlined" className={classes.paper}>
+        <Paper
+            variant="outlined"
+            className={classes.paper}
+        >
 
-            <Typography variant="h4" gutterBottom>
-                New Album
+            <Typography 
+                variant="h6" 
+                gutterBottom
+                color="primary"
+            >
+                Add a New Album
             </Typography>
+
+            <Divider
+                variant="fullWidth"
+                light
+                className={classes.divider}
+            />
 
             <form onSubmit={handleSubmit} >
 
                 <Grid container spacing={2}>
 
+                    {/* ALBUM TITLE */}
                     <Grid item xs={6}>
                         <TextField
                             variant="outlined"
@@ -125,7 +143,8 @@ export default function AlbumForm() {
                             label='Title'
                             type="text"
                             fullWidth
-                            margin="none"
+                            margin="dense"
+                            helperText="The full title of the Album"
                             name="title"
                             value={album.title}
                             autoFocus
@@ -134,6 +153,7 @@ export default function AlbumForm() {
                         />
                     </Grid>
 
+                    {/* ALBUM ARTIST */}
                     <Grid item xs={6}>
                         <TextField
                             variant="outlined"
@@ -141,7 +161,7 @@ export default function AlbumForm() {
                             label='Artist'
                             type="text"
                             fullWidth
-                            margin="none"
+                            margin="dense"
                             name="artist"
                             value={album.artist}
                             autoComplete="off"
@@ -149,17 +169,33 @@ export default function AlbumForm() {
                         />
                     </Grid>
 
-                    <Grid item xs={6}>
+                    {/* ALBUM STUDIO */}
+                    <Grid item xs={3}>
                         <TextField
                             variant="outlined"
                             size="small"
                             label='Studio'
                             type="text"
                             fullWidth
-                            margin="none"
+                            margin="dense"
                             name="studio"
                             value={album.studio}
+                            autoComplete="off"
+                            onChange={handleChange}
+                        />
+                    </Grid>
 
+                    {/* ALBUM PRODUCER */}
+                    <Grid item xs={3}>
+                        <TextField
+                            variant="outlined"
+                            size="small"
+                            label='Producer'
+                            type="text"
+                            fullWidth
+                            margin="dense"
+                            name="producer"
+                            value={album.producer}
                             autoComplete="off"
                             onChange={handleChange}
                         />
@@ -170,9 +206,10 @@ export default function AlbumForm() {
                             variant="outlined"
                             size="small"
                             type="date"
+                            fullWidth
                             helperText="Release date"
                             name="release_date"
-                            margin="none"
+                            margin="dense"
                             value={album.release_date}
                             onChange={handleChange}
                         />
@@ -185,7 +222,7 @@ export default function AlbumForm() {
                             size="small"
                             type="text"
                             fullWidth
-                            margin="none"
+                            margin="dense"
                             name="genre"
                             value={album.genre}
                             autoComplete="off"
@@ -202,7 +239,7 @@ export default function AlbumForm() {
                             rows={6}
                             fullWidth
                             name="summary"
-                            margin="none"
+                            margin="dense"
                             value={album.summary}
                             onChange={handleChange}
                         />
@@ -231,7 +268,7 @@ export default function AlbumForm() {
                             disabled={disabled}
                             startIcon={<CloudUploadIcon />}
                         >
-                            Submit
+                            Create
                         </Button>
 
                         <Backdrop

@@ -6,7 +6,7 @@ import DeleteIcon from '@material-ui/icons/Delete';
 
 const useStyles = makeStyles((theme) => ({
     deleteButton: {
-        margin: theme.spacing(2)
+        margin: theme.spacing(0, 2, 0, 0),
     }
 }))
 
@@ -36,23 +36,24 @@ export default function AlbumActions({album}) {
         <>
             <Button
                 variant="contained"
-                color="primary"
+                color="secondary"
                 size="small"
                 onClick={() => setModal(true)}
                 startIcon={<DeleteIcon />}
                 className={classes.deleteButton}
             >
-                Delete Album
+                Delete
             </Button>
 
             <Button
                 variant="contained"
                 color="primary"
                 size="small"
+                startIcon={<DeleteIcon />}
                 className={classes.editButton}
                 disabled
             >
-                Edit Album
+                Edit
             </Button>
 
             <Dialog

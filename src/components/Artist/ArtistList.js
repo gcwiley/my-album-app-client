@@ -3,12 +3,21 @@ import { Link } from 'react-router-dom';
 import axios from 'axios';
 
 // MUI Components
-import { Avatar, Paper, Grid, Typography, makeStyles } from '@material-ui/core';
+import { Avatar, Paper, Grid, Typography, Divider, makeStyles } from '@material-ui/core';
 
 const useStyles = makeStyles((theme) => ({
+    paper: {
+        marginTop: theme.spacing(1),
+        padding: theme.spacing(3),
+    },
+    divider: {
+        marginTop: theme.spacing(1),
+        marginBottom: theme.spacing(2)
+    },
     artist_card: {
         width: theme.spacing(20),
         height: theme.spacing(20),
+        border: `7px solid ${theme.palette.background.default}`, 
     }
 }))
 
@@ -30,11 +39,24 @@ export default function ArtistList() {
 
     return (
         
-        <Paper variant="outlined">
+        <Paper
+            variant="outlined" 
+            className={classes.paper}
+        >
 
-            <Typography variant="h5" gutterBottom>
+            <Typography 
+                variant="h6" 
+                gutterBottom
+                color="primary"
+            >
                 My Artists
             </Typography>
+
+            <Divider
+                variant="fullWidth"
+                light
+                className={classes.divider}
+            />
 
             <Grid container spacing={2}>
                 {artists.map((artist) => (

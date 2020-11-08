@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-
-import { Typography, TextField, Grid, Paper, Button, Backdrop, CircularProgress, Snackbar, makeStyles } from '@material-ui/core';
+import { Typography, TextField, Grid, Paper, Button, Backdrop, CircularProgress, Snackbar, Divider, makeStyles } from '@material-ui/core';
 import Alert from '@material-ui/lab/Alert';
 import CloudUploadIcon from '@material-ui/icons/CloudUpload';
 
@@ -14,6 +13,10 @@ const useStyles = makeStyles((theme) => ({
     backdrop: {
         zIndex: theme.zIndex.drawer + 1,
         color: '#fff'
+    },
+    divider: {
+        marginTop: theme.spacing(1),
+        marginBottom: theme.spacing(2)
     }
 }));
 
@@ -104,16 +107,30 @@ export default function ArtistForm() {
             </Alert>
         </Snackbar>
 
-        <Paper variant="outlined" className={classes.paper}>
+        <Paper
+            variant="outlined" 
+            className={classes.paper}
+        >
 
-            <Typography variant="h4" gutterBottom>
+            <Typography 
+                variant="h6" 
+                gutterBottom
+                color="primary"
+            >
                 New Artist
             </Typography>
+
+            <Divider
+                variant="fullWidth"
+                light
+                className={classes.divider}
+            />
 
             <form onSubmit={handleSubmit}>
 
                 <Grid container spacing={2}>
 
+                    {/* ARTIST FIRST NAME */}
                     <Grid item xs={6}>
                         <TextField
                             variant="outlined"
@@ -121,7 +138,8 @@ export default function ArtistForm() {
                             label="First Name"
                             type="text"
                             fullWidth
-                            margin="none"
+                            margin="dense"
+                            helperText="The first name of the artist"
                             name="first_name"
                             value={artist.first_name}
                             autoFocus
@@ -130,6 +148,7 @@ export default function ArtistForm() {
                         />
                     </Grid>
 
+                    {/* ARTIST LAST NAME */}
                     <Grid item xs={6}>
                         <TextField
                             variant="outlined"
@@ -137,7 +156,8 @@ export default function ArtistForm() {
                             label="Last Name"
                             type="text"
                             fullWidth
-                            margin="none"
+                            margin="dense"
+                            helperText="The last name of the artist"
                             name="last_name"
                             value={artist.last_name}
                             autoComplete="off"
@@ -145,14 +165,15 @@ export default function ArtistForm() {
                         />
                     </Grid>
 
+                    {/* ARTIST DATE OF BIRTH */}
                     <Grid item xs={3}>
                         <TextField
                             variant="outlined"
                             size="small"
                             type="date"
-                            helperText="Date of Birth"
+                            helperText="Date of Birth of the artist"
                             fullWidth
-                            margin="none"
+                            margin="dense"
                             name="date_of_birth"
                             value={artist.date_of_birth}
                             autoComplete="off"
@@ -160,14 +181,16 @@ export default function ArtistForm() {
                         />
                     </Grid>
 
+                    {/* ARTIST PLACE OF BIRTH */}
                     <Grid item xs={3}>
                         <TextField
                             variant="outlined"
                             size="small"
                             label='Place of Birth'
                             type="text"
+                            helperText="Place of Birth of the artist"
                             fullWidth
-                            margin="none"
+                            margin="dense"
                             name="place_of_birth"
                             value={artist.place_of_birth}
                             autoComplete="off"
@@ -175,6 +198,7 @@ export default function ArtistForm() {
                         />
                     </Grid>
 
+                    {/* MUSIC GROUP */}
                     <Grid item xs={6}>
                         <TextField
                             variant="outlined"
@@ -182,7 +206,7 @@ export default function ArtistForm() {
                             label="Music Group"
                             type="text"
                             fullWidth
-                            margin="none"
+                            margin="dense"
                             name="music_group"
                             value={artist.music_group}
                             autoComplete="off"
@@ -190,12 +214,15 @@ export default function ArtistForm() {
                         />
                     </Grid>
 
+                    {/* SUMMARY */}
                     <Grid item xs={12}>
                         <TextField
                             variant="outlined"
                             size="small"
                             label="Summary"
                             placeholder="Please provide a short summary."
+                            type="text"
+                            margin="dense"
                             multiline
                             rows={6}
                             fullWidth
@@ -228,7 +255,7 @@ export default function ArtistForm() {
                             disabled={ disabled || loading }
                             startIcon={<CloudUploadIcon />}
                         >
-                            Submit
+                            Create
                         </Button>
 
                         <Backdrop

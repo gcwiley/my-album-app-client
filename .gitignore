@@ -1,35 +1,17 @@
-# Logs
-logs
-*.log
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
-# Dependency directories
-node_modules/
+# CLIENT SIDE GIT IGNORE
+
+# dependencies
 /node_modules
-jspm_packages/
 /.pnp
 .pnp.js
-
-client/build
-
-server/src/build
-
-# Optional npm cache directory
-.npm
-
-# To do list
-TO-DO.md
-
-# dotenv environment variables file
-.env
 
 # testing
 /coverage
 
-# Pictures
-/server/data/
+# production
+/build
 
 # misc
 .DS_Store
@@ -37,3 +19,7 @@ TO-DO.md
 .env.development.local
 .env.test.local
 .env.production.local
+
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*

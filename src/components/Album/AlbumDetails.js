@@ -2,18 +2,19 @@ import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
 
-import { Typography, Paper, Grid,makeStyles } from '@material-ui/core';
+import { Typography, Paper, Grid, makeStyles } from '@material-ui/core';
 
 import AlbumActions from './AlbumActions';
 
 const useStyles = makeStyles((theme) => ({
     paper: {
-        padding: theme.spacing(5)
+        padding: theme.spacing(3),
+        marginBottom: theme.spacing(2)
     },
     album_cover: {
         width: theme.spacing(35),
         height: theme.spacing(35),
-        padding: theme.spacing(3)
+        padding: theme.spacing(3),
     },
 }));
 
@@ -41,37 +42,62 @@ export default function AlbumDetails() {
     }
 
     return (
+
+        <>
         <Paper variant="outlined" className={classes.paper}>
 
             <Grid container spacing={0}>
 
                 <Grid item xs={8}>
 
-                    <Typography component="h1" variant="h4">
+                    <Typography 
+                        variant="h5"
+                        color="primary"
+                        gutterBottom
+                    >
                         {album.title}
                     </Typography>
 
-                    <Typography variant="button" color="primary" gutterBottom>
+                    <Typography 
+                        variant="button" 
+                        color="primary" 
+                        gutterBottom
+                    >
                         By {album.artist}
                     </Typography>
 
-                    <Typography variant="subtitle2" gutterBottom>
+                    <Typography 
+                        variant="subtitle2" 
+                        gutterBottom
+                    >
                         <strong>Studio/Label:</strong> {album.studio}
                     </Typography>
 
-                    <Typography variant="subtitle2" gutterBottom>
+                    <Typography 
+                        variant="subtitle2" 
+                        gutterBottom
+                    >
                         <strong>Date Released:</strong> {album.release_date}
                     </Typography>
 
-                    <Typography variant="subtitle2" gutterBottom>
+                    <Typography 
+                        variant="subtitle2" 
+                        gutterBottom
+                    >
                         <strong>Genre:</strong> {album.genre}
                     </Typography>
 
-                    <Typography variant="subtitle2" gutterBottom>
+                    <Typography 
+                        variant="subtitle2" 
+                        gutterBottom
+                    >
                         <strong>Summary</strong>
                     </Typography>
 
-                    <Typography variant="body2" gutterBottom>
+                    <Typography 
+                        variant="body2" 
+                        gutterBottom
+                    >
                         {album.summary}
                     </Typography>
 
@@ -83,8 +109,10 @@ export default function AlbumDetails() {
 
             </Grid>
 
+            </Paper>
+
             <AlbumActions album={album} />
 
-        </Paper>
+        </>
     );
 }

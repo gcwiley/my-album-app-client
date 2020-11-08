@@ -7,15 +7,13 @@ import HomePage from './pages/HomePage';
 import AlbumDetails from './components/Album/AlbumDetails';
 import ArtistPage from './pages/ArtistPage';
 import ArtistDetails from './components/Artist/ArtistDetails';
-// import ForgotPassword from './components/Auth/ForgotPassword';
 import AboutPage from './pages/AboutPage';
 
 // Import Layout Components
-import MenuAppBar from './components/layout/MenuAppBar';
-import NavBar from './components/layout/NavBar';
-import AppStatus from './components/layout/AppStatus';
-
-// ADD FOOTER HERE
+import MenuAppBar from './components/Layout/MenuAppBar';
+import NavBar from './components/Layout/NavBar';
+import StatusBar from './components/Layout/StatusBar';
+import Footer from './components/Layout/Footer';
 
 // Sign IN/UP Components
 import SignIn from './components/Auth/SignIn';
@@ -29,7 +27,7 @@ export default function App() {
         <BrowserRouter>
           <MenuAppBar />
           <Container maxWidth="md">
-            <AppStatus />
+            <StatusBar />
             <NavBar />
                 <Switch>
                     <Route exact path="/" component={HomePage} /> 
@@ -41,9 +39,9 @@ export default function App() {
                     <Route path="/about" component={AboutPage} />
                     <Route path="/signin" component={SignIn} />
                     <Route path="/signup" component={SignUp} />
-                    <Route path="/forgotpassword" component={ForgotPassword} />
                 </Switch>
           </Container>
+          <Footer />
         </BrowserRouter>  
       </>
     );
