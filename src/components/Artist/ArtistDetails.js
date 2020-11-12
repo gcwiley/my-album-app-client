@@ -49,27 +49,44 @@ export default function ArtistDetails() {
             className={classes.paper}
         >
 
-            <Grid container spacing={0}>
+            <Grid 
+                container 
+                spacing={0}>
 
                 <Grid item xs={8}>
 
-                    <Typography component="h1" variant="h4">
+                    <Typography 
+                        component="h1" 
+                        variant="h4"
+                    >
                         {artist.first_name} {artist.last_name}
                     </Typography>
 
-                    <Typography variant="subtitle2" gutterBottom>
+                    <Typography 
+                        variant="subtitle2" 
+                        gutterBottom
+                    >
                         <strong>Born:</strong> {artist.date_of_birth}
                     </Typography>
 
-                    <Typography variant="subtitle2" gutterBottom>
+                    <Typography 
+                        variant="subtitle2" 
+                        gutterBottom
+                    >
                         <strong>Music Group:</strong> {artist.music_group}
                     </Typography>
 
-                    <Typography variant="subtitle2" gutterBottom>
+                    <Typography 
+                        variant="subtitle2" 
+                        gutterBottom
+                    >
                         <strong>Genre:</strong> {artist.genre}
                     </Typography>
 
-                    <Typography variant="body2" gutterBottom>
+                    <Typography 
+                        variant="body2" 
+                        gutterBottom
+                    >
                         {artist.summary}
                     </Typography>
 

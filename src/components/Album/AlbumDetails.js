@@ -44,9 +44,13 @@ export default function AlbumDetails() {
     return (
 
         <>
-        <Paper variant="outlined" className={classes.paper}>
+        <Paper 
+            variant="outlined" 
+            className={classes.paper}>
 
-            <Grid container spacing={0}>
+            <Grid 
+                container 
+                spacing={0}>
 
                 <Grid item xs={8}>
 
