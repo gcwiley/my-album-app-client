@@ -1,0 +1,16 @@
+.signup-form {
+  max-width: 400px;
+  margin: 5rem auto;
+  border-radius: 8px;
+  box-shadow: none;
+  border: 0.5px solid gainsboro;
+  padding: 1.5rem;
+}
+
+.full-width {
+  width: 100%;
+}
+
+button {
+  margin: 1rem;
+}

@@ -1,0 +1,75 @@
+<section *ngIf="album">
+
+    <h2>{{ album.title }}</h2>
+    <h3>Studio album by {{ album.artist }}</h3>
+
+    <mat-divider></mat-divider>
+
+    <!-- ALBUM DESCRIPTION -->
+    <mat-card class="album-description">
+        <mat-card-subtitle>Description</mat-card-subtitle>
+        <mat-card-content>
+            <p>{{ album.summary }}</p>
+        </mat-card-content>
+    </mat-card>
+
+    <hr>
+
+    <!-- ALBUM DETAILS -->
+    <mat-card class="album-details">
+
+        <mat-list dense>
+            
+            <mat-list-item>
+                <h3 mat-line> <strong>Artist</strong></h3>
+                <p>{{ album.artist }}</p>
+            </mat-list-item>
+
+            <mat-divider [inset]="true"></mat-divider>
+
+            <mat-list-item>
+                <h3 mat-line> <strong>Release Date</strong></h3>
+                <p>{{ album.releaseDate }}</p>
+            </mat-list-item>
+
+            <mat-divider [inset]="true"></mat-divider>
+
+            <mat-list-item>
+                <h3 mat-line> <strong>Label</strong></h3>
+                <p>{{ album.label }}</p>
+            </mat-list-item>    
+                
+            <mat-divider [inset]="true"></mat-divider>
+
+            <mat-list-item>
+                <h3 mat-line> <strong>Studio</strong></h3>
+                <p>{{ album.studio }}</p>
+            </mat-list-item>    
+                
+            <mat-divider [inset]="true"></mat-divider>
+
+            <mat-list-item>
+                <h3 mat-line> <strong>Genre</strong></h3>
+                <p>{{ album.genre }}</p>
+            </mat-list-item>
+            
+        </mat-list>
+
+    </mat-card>
+
+    <!-- ALBUM COVER PICTURE -->
+    <hr>
+
+    <img src="{{ album.imageUrl }}">
+
+    <hr>
+
+    <!-- ACTIONS BUTTONS -->
+
+    <button mat-raised-button color="warn" >Delete</button>
+    <button mat-raised-button color="primary">Edit</button>
+    
+
+
+
+</section>
