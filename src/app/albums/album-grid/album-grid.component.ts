@@ -4,9 +4,9 @@ import { Component, OnInit } from '@angular/core';
 import { AlbumService } from '../album.service';
 
 // Import Album Type
-import { Album } from '../../types'
+import { Album } from '../../types/album'
 @Component({
-    selector: 'album-grid',
+    selector: 'app-album-grid',
     templateUrl: './album-grid.component.html',
     styleUrls: ['./album-grid.component.css'],
 })

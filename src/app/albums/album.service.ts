@@ -2,10 +2,10 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 import { Observable, of } from 'rxjs';
-import { catchError, map, tap } from 'rxjs/operators';
+import { catchError, tap } from 'rxjs/operators';
 
 // Import the Album type
-import { Album } from '../types';
+import { Album } from '../types/album';
 import { MessageService } from '../messages/message.service';
 
 @Injectable({
@@ -58,9 +58,9 @@ export class AlbumService {
   }
 
   // PUT: update the album on the server
-  updateAlbum(album: Album): Observable<any> {
+  updateAlbum(_id: string, album: Album): Observable<any> {
     return this.http.put(this.albumsUrl, album, this.httpOptions).pipe(
-      tap((_) => this.log(`updated album id=${album._id}`)),
+      tap((_) => this.log(`updated album id=${album.id}`)),
       catchError(this.handleError<any>('update album'))
     );
   }

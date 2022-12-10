@@ -2,9 +2,17 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule } from '@angular/forms'; // used for Template Forms
+import { ReactiveFormsModule } from '@angular/forms'; // used for Reactive Forms
 import { HttpClientModule } from '@angular/common/http';
+import { MatNativeDateModule } from '@angular/material/core';
+
+// Set up Firebase
+import { AngularFireModule } from '@angular/fire/compat';
+import { environment } from '../environments/environment';
+
+// Angular Flex Layout
+// import { FlexLayoutModule } from '@angular/flex-layout';
 
 // Angular Material Modules
 import { MaterialModule } from './material-module';
@@ -51,6 +59,8 @@ import { MessagesComponent } from './messages/messages.component';
     MaterialModule,
     AppRoutingModule,
     HttpClientModule,
+    MatNativeDateModule,
+    AngularFireModule.initializeApp(environment.firebase),
   ],
   providers: [],
   bootstrap: [AppComponent],

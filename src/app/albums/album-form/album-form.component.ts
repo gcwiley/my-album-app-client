@@ -6,15 +6,15 @@ import { ActivatedRoute, ParamMap, Router } from '@angular/router';
 import { AlbumService } from '../album.service';
 
 // Import Album Type
-import { Album } from 'src/app/types';
+import { Album } from '../../types/album';
 
 @Component({
   selector: 'app-album-form',
   templateUrl: './album-form.component.html',
   styleUrls: ['./album-form.component.css'],
 })
-export class AlbumFormComponent {
-  public mode: string = 'create';
+export class AlbumFormComponent implements OnInit {
+  public mode = 'create';
   private id!: string | any;
   private album!: Album;
 
@@ -63,5 +63,19 @@ export class AlbumFormComponent {
         this.id = null;
       }
     });
+  }
+
+  onSaveAlbum() {
+    if (this.mode === 'create') {
+      this.albumService.addAlbum(this.albumForm.value).subscribe(() => {
+        // naivates back to the home page
+        this.router.navigateByUrl('/')
+      })
+    } else {
+      this.albumService.updateAlbum(this.id, this.albumForm.value).subscribe(() => {
+        // navigates back to the home page
+        this.router.navigateByUrl('/')
+      })
+    }
   }
 }

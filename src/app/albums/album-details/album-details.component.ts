@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
-import { Album } from '../../types';
+import { Album } from '../../types/album';
 import { AlbumService } from '../album.service';
 
 @Component({
@@ -12,7 +12,7 @@ import { AlbumService } from '../album.service';
 export class AlbumDetailsComponent implements OnInit {
 
   isLoading = true;
-  album: Album | any;
+  album!: Album | null;
 
   constructor(
     private route: ActivatedRoute,
