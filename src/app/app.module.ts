@@ -28,6 +28,7 @@ import { SignupComponent } from './auth/signup/signup.component';
 // App Routing Module
 import { AppRoutingModule } from './app-routing.module';
 import { FeedbackComponent } from './feedback/feedback.component';
+import { MessagesComponent } from './messages/messages.component';
 
 @NgModule({
   declarations: [
@@ -40,6 +41,7 @@ import { FeedbackComponent } from './feedback/feedback.component';
     SignupComponent,
     FeedbackComponent,
     SigninComponent,
+    MessagesComponent,
   ],
   imports: [
     BrowserModule,
