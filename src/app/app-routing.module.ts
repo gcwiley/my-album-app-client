@@ -7,8 +7,8 @@ import { AlbumGridComponent } from './albums/album-grid/album-grid.component';
 import { AlbumDetailsComponent } from './albums/album-details/album-details.component';
 
 // Auth Components
-import { SigninComponent } from './auth/signin/signin.component';
-import { SignupComponent } from './auth/signup/signup.component';
+import { SigninComponent } from './pages/signin/signin-page.component';
+import { SignupComponent } from './pages/signup/signup-page.component';
 
 // About Page
 import { AboutPageComponent } from './about-page/about-page.component';

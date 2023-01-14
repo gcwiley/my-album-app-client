@@ -4,9 +4,9 @@ import { Router } from '@angular/router';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
 
 @Component({
-  selector: 'app-signin',
-  templateUrl: './signin.component.html',
-  styleUrls: ['./signin.component.css'],
+  selector: 'app-signin-page',
+  templateUrl: './signin-page.component.html',
+  styleUrls: ['./signin-page.component.css'],
 })
 export class SigninComponent {
   signinForm = this.formBuilder.group({

@@ -3,7 +3,7 @@ import { FormBuilder, Validators } from '@angular/forms';
 import { ActivatedRoute, ParamMap, Router } from '@angular/router';
 
 // Import Album Service
-import { AlbumService } from '../album.service';
+import { AlbumService } from '../../services/album.service';
 
 // Import Album Type
 import { Album } from '../../types/album';

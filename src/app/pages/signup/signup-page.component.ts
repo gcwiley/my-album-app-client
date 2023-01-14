@@ -3,9 +3,9 @@ import { UntypedFormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-signup',
-  templateUrl: './signup.component.html',
-  styleUrls: ['./signup.component.css'],
+  selector: 'app-signup-page',
+  templateUrl: './signup-page.component.html',
+  styleUrls: ['./signup-page.component.css'],
 })
 export class SignupComponent {
   signupForm = this.formBuilder.group({

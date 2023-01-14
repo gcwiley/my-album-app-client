@@ -31,12 +31,14 @@ import { NavBarComponent } from './shared/navbar/navbar.component';
 import { FooterComponent } from './shared/footer/footer.component';
 
 // Auth Components
-import { SigninComponent } from './auth/signin/signin.component';
-import { SignupComponent } from './auth/signup/signup.component';
+import { SigninComponent } from './pages/signin/signin-page.component';
+import { SignupComponent } from './pages/signup/signup-page.component';
 
 // FEEDBACK PAGE
-import { FeedbackComponent } from './feedback/feedback.component';
+import { FeedbackComponent } from './comments/feedback.component';
 import { MessagesComponent } from './messages/messages.component';
+import { CommentFormComponent } from './comments/comment-form/comment-form.component';
+import { CommentListComponent } from './comments/comment-list/comment-list.component';
 
 @NgModule({
   declarations: [
@@ -52,6 +54,8 @@ import { MessagesComponent } from './messages/messages.component';
     NavBarComponent,
     SimpleTruncatePipe,
     TruncatePipe,
+    CommentFormComponent,
+    CommentListComponent,
   ],
   imports: [
     BrowserModule,

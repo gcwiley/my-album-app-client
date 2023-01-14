@@ -6,7 +6,7 @@ import { catchError, tap } from 'rxjs/operators';
 
 // Import the Album type
 import { Album } from '../types/album';
-import { MessageService } from '../services/message.service';
+import { MessageService } from './message.service';
 
 @Injectable({
   providedIn: 'root',
