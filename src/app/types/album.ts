@@ -7,5 +7,4 @@ export interface Album {
    studio: string;
    genre: string;
    summary: string;
-   imageUrl: string;
 }

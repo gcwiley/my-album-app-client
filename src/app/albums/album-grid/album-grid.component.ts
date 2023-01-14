@@ -8,7 +8,7 @@ import { Album } from '../../types/album'
 @Component({
     selector: 'app-album-grid',
     templateUrl: './album-grid.component.html',
-    styleUrls: ['./album-grid.component.css'],
+    styleUrls: ['./album-grid.component.scss'],
 })
 export class AlbumGridComponent implements OnInit {
 

@@ -11,30 +11,30 @@ import { MatNativeDateModule } from '@angular/material/core';
 import { AngularFireModule } from '@angular/fire/compat';
 import { environment } from '../environments/environment';
 
-// Angular Flex Layout
-// import { FlexLayoutModule } from '@angular/flex-layout';
-
-// Angular Material Modules
-import { MaterialModule } from './material-module';
-
 // Main App Component
 import { AppComponent } from './app.component';
+
+// App Routing Module
+import { AppRoutingModule } from './app-routing.module';
+
+// PIPES
+import { SimpleTruncatePipe } from './pipes/simple-truncate';
+import { TruncatePipe } from './pipes/truncate';
 
 // Album Components
 import { AlbumFormComponent } from './albums/album-form/album-form.component';
 import { AlbumGridComponent } from './albums/album-grid/album-grid.component';
 import { AlbumDetailsComponent } from './albums/album-details/album-details.component';
 
-// Layout Components
-import { HeaderComponent } from './layout/header/header.component';
-import { FooterComponent } from './layout/footer/footer.component';
+// SHARED COMPONENTS
+import { NavBarComponent } from './shared/navbar/navbar.component';
+import { FooterComponent } from './shared/footer/footer.component';
 
 // Auth Components
 import { SigninComponent } from './auth/signin/signin.component';
 import { SignupComponent } from './auth/signup/signup.component';
 
-// App Routing Module
-import { AppRoutingModule } from './app-routing.module';
+// FEEDBACK PAGE
 import { FeedbackComponent } from './feedback/feedback.component';
 import { MessagesComponent } from './messages/messages.component';
 
@@ -45,18 +45,19 @@ import { MessagesComponent } from './messages/messages.component';
     AlbumFormComponent,
     AlbumDetailsComponent,
     FooterComponent,
-    HeaderComponent,
     SignupComponent,
     FeedbackComponent,
     SigninComponent,
     MessagesComponent,
+    NavBarComponent,
+    SimpleTruncatePipe,
+    TruncatePipe,
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     FormsModule,
     ReactiveFormsModule,
-    MaterialModule,
     AppRoutingModule,
     HttpClientModule,
     MatNativeDateModule,

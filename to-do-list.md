@@ -1,16 +1,8 @@
-1. Self Host Google Material Fonts
+1. Reset GitHub repo - set to public
 
-2. QAQC Code
+2. convert from angular material to bootstrap CSS
 
-3. Add Dark theme to theme.scss file
-
-4. Update About Page
-
-5. Update Album Service from gregwiley.dev code
-
-6. Add box shadown to album covers
-
-7. Add Banner cover art
+3. 
 
 
 
