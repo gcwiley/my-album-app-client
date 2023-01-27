@@ -18,27 +18,29 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 
 // PIPES
-import { SimpleTruncatePipe } from './pipes/simple-truncate';
-import { TruncatePipe } from './pipes/truncate';
+import { SimpleTruncatePipe } from './pipes/simple-truncate.pipe';
+import { TruncatePipe } from './pipes/truncate.pipe';
 
 // Album Components
 import { AlbumFormComponent } from './albums/album-form/album-form.component';
 import { AlbumGridComponent } from './albums/album-grid/album-grid.component';
 import { AlbumDetailsComponent } from './albums/album-details/album-details.component';
 
+// Comment Components\
+import { CommentFormComponent } from './comments/comment-form/comment-form.component';
+import { CommentListComponent } from './comments/comment-list/comment-list.component';
+
 // SHARED COMPONENTS
 import { NavBarComponent } from './shared/navbar/navbar.component';
 import { FooterComponent } from './shared/footer/footer.component';
+import { HeaderComponent } from './shared/header/header.component';
 
-// Auth Components
-import { SigninComponent } from './pages/signin/signin-page.component';
-import { SignupComponent } from './pages/signup/signup-page.component';
+// PAGES
+import { SigninComponent } from './pages/signin-page/signin-page.component';
+import { SignupComponent } from './pages/signup-page/signup-page.component';
+import { ImageGridComponent } from './images/image-grid/image-grid.component';
+import { ImageUploadComponent } from './images/image-upload/image-upload.component';
 
-// FEEDBACK PAGE
-import { FeedbackComponent } from './comments/feedback.component';
-import { MessagesComponent } from './messages/messages.component';
-import { CommentFormComponent } from './comments/comment-form/comment-form.component';
-import { CommentListComponent } from './comments/comment-list/comment-list.component';
 
 @NgModule({
   declarations: [
@@ -48,14 +50,15 @@ import { CommentListComponent } from './comments/comment-list/comment-list.compo
     AlbumDetailsComponent,
     FooterComponent,
     SignupComponent,
-    FeedbackComponent,
     SigninComponent,
-    MessagesComponent,
     NavBarComponent,
     SimpleTruncatePipe,
     TruncatePipe,
     CommentFormComponent,
     CommentListComponent,
+    HeaderComponent,
+    ImageGridComponent,
+    ImageUploadComponent,
   ],
   imports: [
     BrowserModule,
