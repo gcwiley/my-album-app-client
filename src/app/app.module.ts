@@ -40,6 +40,7 @@ import { SigninComponent } from './pages/signin-page/signin-page.component';
 import { SignupComponent } from './pages/signup-page/signup-page.component';
 import { ImageGridComponent } from './images/image-grid/image-grid.component';
 import { ImageUploadComponent } from './images/image-upload/image-upload.component';
+import { MainPageComponent } from './pages/main-page/main-page.component';
 
 
 @NgModule({
@@ -59,6 +60,7 @@ import { ImageUploadComponent } from './images/image-upload/image-upload.compone
     HeaderComponent,
     ImageGridComponent,
     ImageUploadComponent,
+    MainPageComponent,
   ],
   imports: [
     BrowserModule,
