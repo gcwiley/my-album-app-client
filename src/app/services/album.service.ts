@@ -1,22 +1,22 @@
-import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Injectable } from "@angular/core";
+import { HttpClient, HttpHeaders } from "@angular/common/http";
 
-import { Observable, of } from 'rxjs';
-import { catchError, tap } from 'rxjs/operators';
+import { Observable, of } from "rxjs";
+import { catchError, tap } from "rxjs/operators";
 
 // Import the Album type
-import { Album } from '../types/album';
-import { MessageService } from './message.service';
+import { Album } from "../types/album";
+import { MessageService } from "./message.service";
 
 @Injectable({
-  providedIn: 'root',
+  providedIn: "root",
 })
 export class AlbumService {
-  private albumsUrl = 'api/albums'; // URL to web api
+  private albumsUrl = "api/albums"; // URL to web api
 
   httpOptions = {
     headers: new HttpHeaders({
-      'Content-Type': 'application/json',
+      "Content-Type": "application/json",
     }),
   };
 
@@ -29,8 +29,8 @@ export class AlbumService {
   // GET: albums from the server
   getAlbums(): Observable<Album[]> {
     return this.http.get<Album[]>(this.albumsUrl).pipe(
-      tap((_) => this.log('fetched albums')),
-      catchError(this.handleError<Album[]>('getAlbums', []))
+      tap((_) => this.log("fetched albums")),
+      catchError(this.handleError<Album[]>("getAlbums", []))
     );
   }
 
@@ -53,7 +53,7 @@ export class AlbumService {
 
     return this.http.delete<Album>(url, this.httpOptions).pipe(
       tap((_) => this.log(`deleted album id=${id}`)),
-      catchError(this.handleError<Album>('deleted album'))
+      catchError(this.handleError<Album>("deleted album"))
     );
   }
 
@@ -61,7 +61,7 @@ export class AlbumService {
   updateAlbum(_id: string, album: Album): Observable<any> {
     return this.http.put(this.albumsUrl, album, this.httpOptions).pipe(
       tap((_) => this.log(`updated album id=${album.id}`)),
-      catchError(this.handleError<any>('update album'))
+      catchError(this.handleError<any>("update album"))
     );
   }
 
@@ -70,7 +70,7 @@ export class AlbumService {
   // @param operation - name of the operation that failed
   // @param result - optional value to return as the observable result
 
-  private handleError<T>(operation = 'operation', result?: T) {
+  private handleError<T>(operation = "operation", result?: T) {
     return (error: any): Observable<T> => {
       // TODO: send the error to remote logging infrastructure
       console.error(error); // log to console instead

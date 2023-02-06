@@ -2,7 +2,7 @@
 
 2. convert from angular material to bootstrap CSS
 
-3. 
+3. image upload to azure blob storage
 
 
 

@@ -1,31 +1,44 @@
-import { Component } from '@angular/core';
-import { UntypedFormBuilder, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
-import { AngularFireAuth } from '@angular/fire/compat/auth';
+import { Component } from "@angular/core";
+import { FormBuilder, Validators } from "@angular/forms";
+import { Router } from "@angular/router";
+
+// import the auth service
+import { AuthService } from "src/app/services/auth.service";
 
 @Component({
-  selector: 'app-signin-page',
-  templateUrl: './signin-page.component.html',
-  styleUrls: ['./signin-page.component.scss'],
+	selector: "app-signin",
+	templateUrl: "./signin-page.component.html",
+	styleUrls: ["./signin-page.component.scss"],
 })
 export class SigninComponent {
-  signinForm = this.formBuilder.group({
-    email: ['', Validators.required],
-    password: ['', Validators.required],
-  });
+	// inject the router, form builder, and auth service
+	constructor(
+		private router: Router,
+		private formBuilder: FormBuilder,
+		private authService: AuthService
+	) {}
 
-  constructor(
-    private formBuilder: UntypedFormBuilder,
-    private router: Router,
-    private auth: AngularFireAuth
-  ) {}
+	// create the signin form
+	signinForm = this.formBuilder.group({
+		email: ["", Validators.required],
+		password: ["", Validators.required],
+	});
 
-  onSubmitSignIn() {
-    this.auth
-      .signInWithEmailAndPassword(
-        this.signinForm.value.email,
-        this.signinForm.value.password
-      )
-      .then(() => this.router.navigateByUrl('/'));
-  }
+	// sign in with email and password
+	// if successful, navigate to the home page
+	onSubmitSignIn() {
+		this.authService
+			.SigninUserwithEmailAndPassword(
+				this.signinForm.value.email!,
+				this.signinForm.value.password!
+			)
+			.then(() => {
+				// navigates user to the main page
+				this.router.navigateByUrl("/");
+			})
+			// if error, log the error message
+			.catch((error) => {
+				window.alert(error.message);
+			});
+	}
 }
