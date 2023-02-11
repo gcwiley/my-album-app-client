@@ -11,10 +11,10 @@ import { SigninComponent } from './pages/signin-page/signin-page.component';
 import { SignupComponent } from './pages/signup-page/signup-page.component';
 
 // About Page
-import { AboutPageComponent } from './about-page/about-page.component';
+import { AboutPageComponent } from './pages/about-page/about-page.component';
 
 // Not Found Page
-import { NotFoundPageComponent } from './not-found-page/not-found-page.component';
+import { NotFoundPageComponent } from './pages/not-found-page/not-found-page.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/albums', pathMatch: 'full' },

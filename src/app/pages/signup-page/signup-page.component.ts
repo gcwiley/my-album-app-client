@@ -5,7 +5,7 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-signup-page',
   templateUrl: './signup-page.component.html',
-  styleUrls: ['./signup-page.component.css'],
+  styleUrls: ['./signup-page.component.scss'],
 })
 export class SignupComponent {
   signupForm = this.formBuilder.group({

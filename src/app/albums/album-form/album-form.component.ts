@@ -6,12 +6,12 @@ import { ActivatedRoute, ParamMap, Router } from '@angular/router';
 import { AlbumService } from '../../services/album.service';
 
 // Import Album Type
-import { Album } from '../../types/album';
+import { Album } from '../../types/album.interface';
 
 @Component({
   selector: 'app-album-form',
   templateUrl: './album-form.component.html',
-  styleUrls: ['./album-form.component.css'],
+  styleUrls: ['./album-form.component.scss'],
 })
 export class AlbumFormComponent implements OnInit {
   public mode = 'create';
@@ -26,7 +26,6 @@ export class AlbumFormComponent implements OnInit {
     label: ['', Validators.required],
     studio: ['', Validators.required],
     genre: ['', Validators.required],
-    imageUrl: ['', Validators.required],
     summary: ['', Validators.required],
   });
 
@@ -54,7 +53,6 @@ export class AlbumFormComponent implements OnInit {
             label: this.album.label,
             studio: this.album.studio,
             genre: this.album.genre,
-            imageUrl: this.album.imageUrl,
             summary: this.album.summary,
           });
         });

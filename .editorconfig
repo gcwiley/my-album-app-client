@@ -11,7 +11,7 @@ trim_trailing_whitespace = true # remove any whitespace characters preceding new
 [*.md]
 
 [*.ts]
-quote_type = double # single, double (only used if indent_style is space)
+quote_type = single # single, double (only used if indent_style is space)
 
 [*.js]
 
