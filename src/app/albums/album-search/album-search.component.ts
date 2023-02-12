@@ -5,4 +5,10 @@ import { Component } from '@angular/core';
 	templateUrl: './album-search.component.html',
 	styleUrls: ['./album-search.component.scss'],
 })
-export class AlbumSearchComponent {}
+export class AlbumSearchComponent {
+
+
+
+
+	
+}

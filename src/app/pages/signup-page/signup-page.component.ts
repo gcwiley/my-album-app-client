@@ -1,25 +1,41 @@
 import { Component } from '@angular/core';
-import { UntypedFormBuilder, Validators } from '@angular/forms';
+import { FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 
+// import auth service
+import { AuthService } from 'src/app/services/auth.service';
+
 @Component({
-  selector: 'app-signup-page',
-  templateUrl: './signup-page.component.html',
-  styleUrls: ['./signup-page.component.scss'],
+	selector: 'app-signup-page',
+	templateUrl: './signup-page.component.html',
+	styleUrls: ['./signup-page.component.scss'],
 })
 export class SignupComponent {
-  signupForm = this.formBuilder.group({
-    name: ['', Validators.required],
-    email: ['', Validators.required],
-    password: ['', Validators.required],
-  });
+	//   inject the router and form builder and auth service
+	constructor(
+		private formBuilder: FormBuilder,
+		private router: Router,
+		private authService: AuthService
+	) {}
 
-  constructor(
-    private formBuilder: UntypedFormBuilder,
-    private router: Router
-  ) {}
+	signupForm = this.formBuilder.group({
+		email: ['', Validators.required],
+		password: ['', Validators.required],
+	});
 
-  onSubmit() {
-    this.router.navigateByUrl('/');
-  }
+	// create user with email and password
+	createUserWithEmailAndPassword() {
+		this.authService
+			.CreateUserWithEmailAndPassword(
+				this.signupForm.value.email!,
+				this.signupForm.value.password!
+			)
+			.then(() => {
+				// navigates user to the main page
+				this.router.navigateByUrl('/');
+			})
+			.catch((error) => {
+				window.alert(error.message);
+			});
+	}
 }

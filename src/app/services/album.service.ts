@@ -34,20 +34,31 @@ export class AlbumService {
 	}
 
 	// GET: album by ID from the database
-	getAlbum(id: string): Observable<Album> {
+	getAlbum(id: string | null): Observable<Album> {
 		const url = `${this.albumsUrl}/${id}`;
 		return this.http.get<Album>(url);
 	}
 
 	// GET: search albums in the database - SEARCH FIX THIS!!
-	searchAlbums() {
-		return;
+	searchAlbums(term: string): Observable<Album[]> {
+		if (!term.trim()) {
+			// if no search term, return empty hero array
+			return of([]);
+		}
+		return this.http.get<Album[]>(`${this.albumsUrl}/?name=${term}`).pipe(
+			tap((x) =>
+				x.length
+					? this.log(`found albums matching "${term}"`)
+					: this.log(`no albums matching "${term}"`)
+			),
+			catchError(this.handleError<Album[]>('search albums', []))
+		);
 	}
 
 	// SAVE METHODS
 
 	// POST: Add a new Album to the server
-	addAlbum(newAlbum: Album): Observable<Album> {
+	addAlbum(newAlbum: Album | any): Observable<Album> {
 		return this.http.post<Album>(this.albumsUrl, newAlbum, this.httpOptions);
 	}
 
@@ -62,8 +73,10 @@ export class AlbumService {
 	}
 
 	// PUT: update the album on the server
-	updateAlbum(_id: string, album: Album): Observable<any> {
-		return this.http.put(this.albumsUrl, album, this.httpOptions).pipe(
+	updateAlbum(id: any, album: any): Observable<any> {
+		const url = `${this.albumsUrl}/${id}`;
+
+		return this.http.put(url, album, this.httpOptions).pipe(
 			tap(() => this.log(`updated album id=${album._id}`)),
 			catchError(this.handleError<any>('update album'))
 		);

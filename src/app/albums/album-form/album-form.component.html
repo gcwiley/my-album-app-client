@@ -1,8 +1,61 @@
-<form [formGroup]="albumForm" (ngSubmit)="onSaveAlbum()">
+<div class="container">
+	<form [formGroup]="albumForm" novalidate (ngSubmit)="onSaveAlbum()">
+		<h1>Add Album</h1>
 
-	<!-- Form goes here -->
+		<!-- TITLE (title) -->
+		<div class="mb-3">
+			<label class="form-label">Title</label>
+			<input type="text" class="form-control" formControlName="title" />
+		</div>
 
+		<!-- ARTIST (artist) -->
+		<div class="mb-3">
+			<label class="form-label">Artist</label>
+			<input type="text" class="form-control" formControlName="artist" />
+		</div>
 
+		<div class="row">
+			<!-- RELEASE DATE (releaseDate) -->
+			<div class="col">
+				<label class="form-label">Release Date</label>
+				<input
+					type="text"
+					class="form-control"
+					formControlName="releaseDate"
+				/>
+			</div>
 
+			<!-- LABEL (label) -->
+			<div class="col">
+				<label class="form-label">Label</label>
+				<input type="text" class="form-control" formControlName="label" />
+			</div>
+		</div>
 
-</form>
+		<div class="row">
+			<!-- STUDIO (studio) -->
+			<div class="col">
+				<label class="form-label">Studio</label>
+				<input type="text" class="form-control" formControlName="studio" />
+			</div>
+
+			<!-- GENRE (genre) -->
+			<div class="col">
+				<label class="form-label">Genre</label>
+				<input type="text" class="form-control" formControlName="genre" />
+			</div>
+		</div> <!-- row -->
+
+		<!-- SUMMARY (summary) -->
+		<div class="mb-3">
+			<label class="form-label">Summary</label>
+			<textarea
+				class="form-control"
+				rows="3"
+				formControlName="summary"
+			></textarea>
+		</div>
+
+		<button class="btn btn-primary" type="submit">Add Album</button>
+	</form>
+</div>

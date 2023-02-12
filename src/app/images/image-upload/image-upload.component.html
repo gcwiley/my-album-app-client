@@ -1,1 +1,17 @@
+<main>
+	<section>
+		<input
+			type="text"
+			placeholder="Enter a title for the image"
+			[(ngModel)]="title"
+		/>
 
+		<input
+			type="file"
+			accept="image/png, image/jpeg"
+			(change)="onFileSelect($event)"
+		/>
+
+		<button (click)="onClickUpload()">Upload Image</button>
+	</section>
+</main>

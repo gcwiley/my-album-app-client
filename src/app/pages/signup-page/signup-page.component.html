@@ -1,7 +1,25 @@
-<form>
+<main class="container">
 
+	<div class="text-center">
+		<h3>Sign Up</h3>
+		<p>Create your account</p>
+	</div>
 
-	
+	<!-- FORM -->
+	<form novalidate (ngSubmit)="createUserWithEmailAndPassword()">
 
+		<!-- EMAIL (email) -->
+		<div class="mb-3">
+			<label class="form-label">Email address</label>
+			<input type="email" class="form-control" formControlName="email" />
+		</div>
 
-</form>
+		<!-- PASSWORD (password) -->
+		<div class="mb-3">
+			<label class="form-label">Password</label>
+			<input type="password" class="form-control" />
+		</div>
+
+		<button type="submit" class="btn btn-primary">Sign Up</button>
+	</form>
+</main>

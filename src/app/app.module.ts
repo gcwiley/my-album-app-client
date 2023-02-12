@@ -47,6 +47,10 @@ import { AlbumSearchComponent } from './albums/album-search/album-search.compone
 import { CommentFormComponent } from './comments/comment-form/comment-form.component';
 import { CommentListComponent } from './comments/comment-list/comment-list.component';
 
+// Image Component
+import { ImageGridComponent } from './images/image-grid/image-grid.component';
+import { ImageUploadComponent } from './images/image-upload/image-upload.component';
+
 @NgModule({
 	declarations: [
 		AppComponent,
@@ -68,6 +72,8 @@ import { CommentListComponent } from './comments/comment-list/comment-list.compo
 		AlbumSearchComponent,
 		CommentFormComponent,
 		CommentListComponent,
+		ImageGridComponent,
+		ImageUploadComponent,
 	],
 	imports: [
 		BrowserModule,
