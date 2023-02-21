@@ -10,71 +10,35 @@ import { MatNativeDateModule } from '@angular/material/core';
 // Set up Firebase
 import { AngularFireModule } from '@angular/fire/compat';
 
-// load environmental modules - FIX THIS!
+// load environmental modules
 import { environment } from '../environments/environment';
 
 // App Routing Module
 import { AppRoutingModule } from './app-routing.module';
 
 // import pipes
-import { SimpleTruncatePipe } from './pipes/simple-truncate.pipe';
-import { TruncatePipe } from './pipes/truncate.pipe';
+import { PipesModule } from './pipes/pipe.module';
 
 // Main App Component
 import { AppComponent } from './app.component';
 
-// Page Components
-import { AboutPageComponent } from './pages/about-page/about-page.component';
-import { MainPageComponent } from './pages/main-page/main-page.component';
-import { NotFoundPageComponent } from './pages/not-found-page/not-found-page.component';
-import { ResetPasswordPageComponent } from './pages/reset-password-page/reset-password-page.component';
-import { SigninComponent } from './pages/signin-page/signin-page.component';
-import { SignupComponent } from './pages/signup-page/signup-page.component';
+// import Page module
+import { PageComponentModule } from './pages/page.module';
 
 // import shared components
-import { FooterComponent } from './shared/footer/footer.component';
-import { HeaderComponent } from './shared/header/header.component';
-import { HeroComponent } from './shared/hero/hero.component';
-import { NavBarComponent } from './shared/navbar/navbar.component';
+import { SharedComponentsModule } from './shared/shared.module';
 
 // Album Components
-import { AlbumDetailsComponent } from './albums/album-details/album-details.component';
-import { AlbumFormComponent } from './albums/album-form/album-form.component';
-import { AlbumGridComponent } from './albums/album-grid/album-grid.component';
-import { AlbumSearchComponent } from './albums/album-search/album-search.component';
+import { AlbumComponentsModule } from './albums/album.module';
 
 // Comment Components
-import { CommentFormComponent } from './comments/comment-form/comment-form.component';
-import { CommentListComponent } from './comments/comment-list/comment-list.component';
+import { CommentComponentModule } from './comments/comment.module';
 
 // Image Component
-import { ImageGridComponent } from './images/image-grid/image-grid.component';
-import { ImageUploadComponent } from './images/image-upload/image-upload.component';
+import { ImageComponentModule } from './images/image.module';
 
 @NgModule({
-	declarations: [
-		AppComponent,
-		SimpleTruncatePipe,
-		TruncatePipe,
-		AboutPageComponent,
-		MainPageComponent,
-		NotFoundPageComponent,
-		ResetPasswordPageComponent,
-		SigninComponent,
-		SignupComponent,
-		FooterComponent,
-		HeaderComponent,
-		HeroComponent,
-		NavBarComponent,
-		AlbumDetailsComponent,
-		AlbumFormComponent,
-		AlbumGridComponent,
-		AlbumSearchComponent,
-		CommentFormComponent,
-		CommentListComponent,
-		ImageGridComponent,
-		ImageUploadComponent,
-	],
+	declarations: [AppComponent],
 	imports: [
 		BrowserModule,
 		BrowserAnimationsModule,
@@ -84,6 +48,12 @@ import { ImageUploadComponent } from './images/image-upload/image-upload.compone
 		HttpClientModule,
 		MatNativeDateModule,
 		AngularFireModule.initializeApp(environment.firebase),
+		PipesModule,
+		PageComponentModule,
+		SharedComponentsModule,
+		AlbumComponentsModule,
+		CommentComponentModule,
+		ImageComponentModule,
 	],
 	providers: [],
 	bootstrap: [AppComponent],
