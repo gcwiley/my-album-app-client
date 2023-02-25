@@ -1,62 +1,152 @@
 <div class="container">
-	<form [formGroup]="albumForm" novalidate (ngSubmit)="onSaveAlbum()">
-		<h1>Add Album</h1>
+	<main>
 
-		<!-- TITLE (title) -->
-		<div class="mb-3">
-			<label class="form-label">Title</label>
-			<input type="text" class="form-control" formControlName="title" />
+		<div class="py-5 text-center">
+			<img
+				class="d-block mx-auto mb-4"
+				src="../../../assets/logos/angular-logo.svg"
+				alt=""
+				width="72"
+				height="57"
+			/>
+			<h2>Add New Album</h2>
+			<p class="lead">Add more text here</p>
 		</div>
 
-		<!-- ARTIST (artist) -->
-		<div class="mb-3">
-			<label class="form-label">Artist</label>
-			<input type="text" class="form-control" formControlName="artist" />
-		</div>
+		<div class="row g-5">
+			<div class="col-md-5 col-lg-4 order-md-last">
+				<h4 class="d-flex justify-content-between align-items-center mb-3">
+					<span class="text-primary">Album Details</span>
+				</h4>
 
-		<div class="row">
-			<!-- RELEASE DATE (releaseDate) -->
-			<div class="col">
-				<label class="form-label">Release Date</label>
-				<input
-					type="text"
-					class="form-control"
-					formControlName="releaseDate"
-				/>
+				<ul class="list-group mb-3">
+					<li class="list-group-item d-flex justify-content-between lh-sm">
+						<div>
+							<h6 class="my-0">Product name</h6>
+							<small class="text-muted">Brief description</small>
+						</div>
+						<span class="text-muted">$12</span>
+					</li>
+
+					<li class="list-group-item d-flex justify-content-between lh-sm">
+						<div>
+							<h6 class="my-0">Second product</h6>
+							<small class="text-muted">Brief description</small>
+						</div>
+						<span class="text-muted">$8</span>
+					</li>
+
+					<li class="list-group-item d-flex justify-content-between lh-sm">
+						<div>
+							<h6 class="my-0">Third item</h6>
+							<small class="text-muted">Brief description</small>
+						</div>
+						<span class="text-muted">$5</span>
+					</li>
+
+					<li
+						class="list-group-item d-flex justify-content-between bg-light"
+					>
+						<div class="text-success">
+							<h6 class="my-0">Promo code</h6>
+							<small>EXAMPLECODE</small>
+						</div>
+						<span class="text-success">−$5</span>
+					</li>
+					<li class="list-group-item d-flex justify-content-between">
+						<span>Total (USD)</span>
+						<strong>$20</strong>
+					</li>
+				</ul>
 			</div>
 
-			<!-- LABEL (label) -->
-			<div class="col">
-				<label class="form-label">Label</label>
-				<input type="text" class="form-control" formControlName="label" />
+			<!-- ALBUM FORM -->
+			<div class="col-md-7 col-lg-8">
+				<h4 class="mb-3">Album</h4>
+
+				<form class="needs-validation" novalidate>
+					<div class="row g-3">
+
+						<!-- TITLE (title) -->
+						<div class="col-sm-12">
+							<label for="firstName" class="form-label">Title</label>
+							<input type="text" class="form-control" required formControlName="title"/>
+							<small class="text-muted">The name of the artist of the album.</small>
+							<div class="invalid-feedback">
+								Valid first name is required.
+							</div>
+						</div>
+
+						<!-- ARTIST (artist) -->
+						<div class="col-sm-12">
+							<label for="lastName" class="form-label">Artist</label>
+							<input type="text" class="form-control" required formControlName="artist"/>
+							<small class="text-muted">The name of the artist of the album.</small>
+							<div class="invalid-feedback">
+								Valid last name is required.
+							</div>
+						</div>
+
+						<!-- LABEL (label) -->
+						<div class="col-sm-6">
+							<label for="lastName" class="form-label">Label</label>
+							<input type="text" class="form-control" required formControlName="label"/>
+							<small class="text-muted">The name of the artist of the album.</small>
+							<div class="invalid-feedback">
+								Valid last name is required.
+							</div>
+						</div>
+
+						<!-- STUDIO (studio) -->
+						<div class="col-sm-6">
+							<label for="lastName" class="form-label">Studio</label>
+							<input type="text" class="form-control" required formControlName="studio"/>
+							<small class="text-muted">The name of the record studio that produced the album.</small>
+							<div class="invalid-feedback">
+								Valid last name is required.
+							</div>
+						</div>
+
+						<!-- Genre (genre) -->
+						<div class="col-sm-6">
+							<label for="country" class="form-label">Genre</label>
+							<select class="form-select" id="country" required formControlName="genre">
+								<option value="">Choose a genre</option>
+								<option>United States</option>
+							</select>
+							<div class="invalid-feedback">
+								Please select a valid country.
+							</div>
+						</div>
+
+						<!-- RELEASE DATE (releaseDate) -->
+						<div class="col-sm-6">
+							<label for="lastName" class="form-label">Release Date</label>
+							<input type="text" class="form-control" required formControlName="releaseDate"/>
+							<small class="text-muted">The date the album was first released.</small>
+							<div class="invalid-feedback">
+								Valid last name is required.
+							</div>
+						</div>
+
+						<!-- SUMMARY (summary) -->
+						<div class="col-12">
+							<label for="lastName" class="form-label">Summary</label>
+							<textarea class="form-control" required formControlName="summary" rows="6"></textarea>
+							<div class="invalid-feedback">
+								Valid last name is required.
+							</div>
+						</div>
+					</div>
+
+					<hr class="my-4" />
+
+					<button class="btn btn-primary" type="submit">
+						Add Album
+					</button>
+
+				</form>
 			</div>
 		</div>
-
-		<div class="row">
-			<!-- STUDIO (studio) -->
-			<div class="col">
-				<label class="form-label">Studio</label>
-				<input type="text" class="form-control" formControlName="studio" />
-			</div>
-
-			<!-- GENRE (genre) -->
-			<div class="col">
-				<label class="form-label">Genre</label>
-				<input type="text" class="form-control" formControlName="genre" />
-			</div>
-		</div>
-		<!-- row -->
-
-		<!-- SUMMARY (summary) -->
-		<div class="mb-3">
-			<label class="form-label">Summary</label>
-			<textarea
-				class="form-control"
-				rows="3"
-				formControlName="summary"
-			></textarea>
-		</div>
-
-		<button class="btn btn-primary" type="submit">Add Album</button>
-	</form>
+	</main>
 </div>

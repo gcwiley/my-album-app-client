@@ -25,14 +25,14 @@ import { NotFoundPageComponent } from './pages/not-found-page/not-found-page.com
 
 const routes: Routes = [
 	{ path: '', redirectTo: '/albums', pathMatch: 'full' },
-	{ path: 'albums', component: AlbumGridComponent, pathMatch: 'full', canActivate: [RouteGuard] },
-	{ path: 'albums/:id', component: AlbumDetailsComponent, canActivate: [RouteGuard] },
-	{ path: 'create', component: AlbumFormComponent, canActivate: [RouteGuard] },
-	{ path: 'upload-image', component: ImageUploadComponent, canActivate: [RouteGuard] },
+	{ path: 'albums', component: AlbumGridComponent, pathMatch: 'full' },
+	{ path: 'albums/:id', component: AlbumDetailsComponent },
+	{ path: 'create', component: AlbumFormComponent },
+	{ path: 'upload-image', component: ImageUploadComponent },
 	{ path: 'signin', component: SigninComponent },
 	{ path: 'signup', component: SignupComponent },
 	{ path: 'reset-password', component: ResetPasswordPageComponent },
-	{ path: 'about', component: AboutPageComponent, canActivate: [RouteGuard] },
+	{ path: 'about', component: AboutPageComponent },
 	{ path: '**', component: NotFoundPageComponent },
 ];
 

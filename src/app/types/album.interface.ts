@@ -1,5 +1,5 @@
 export interface Album {
-	_id?: string;
+	id?: string;
 	title: string;
 	artist: string;
 	releaseDate: string;
@@ -7,6 +7,4 @@ export interface Album {
 	studio: string;
 	genre: string;
 	summary: string;
-	createdAt: string;
-	updatedAt: string;
 }

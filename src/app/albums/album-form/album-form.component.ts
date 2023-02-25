@@ -63,6 +63,7 @@ export class AlbumFormComponent implements OnInit {
 		});
 	}
 
+	// saves new album to database
 	onSaveAlbum() {
 		if (this.mode === 'create') {
 			this.albumService.addAlbum(this.albumForm.value).subscribe(() => {
