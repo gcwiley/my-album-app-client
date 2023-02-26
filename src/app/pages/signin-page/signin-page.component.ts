@@ -25,7 +25,7 @@ export class SigninComponent {
 	});
 
 	// sign in with email and password
-	// if successful, navigate to the home page
+	// if successful, navigates user to the home page
 	onSubmitSignIn() {
 		this.authService
 			.SigninUserwithEmailAndPassword(
@@ -37,6 +37,30 @@ export class SigninComponent {
 				this.router.navigateByUrl('/');
 			})
 			// if error, log the error message
+			.catch((error) => {
+				window.alert(error.message);
+			});
+	}
+
+	SignInWithGoogleAuth() {
+		this.authService
+			.SigninWithGoogleAuth()
+			.then(() => {
+				// navigates user to main page
+				this.router.navigateByUrl('/');
+			})
+			.catch((error) => {
+				window.alert(error.message);
+			});
+	}
+
+	SignInWithFacebookAuth() {
+		this.authService
+			.SigninUserwithFacebookAuth()
+			.then(() => {
+				// navigates user to main page
+				this.router.navigateByUrl('/');
+			})
 			.catch((error) => {
 				window.alert(error.message);
 			});

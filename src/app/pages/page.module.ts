@@ -1,5 +1,12 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+
+// import shared components module
+import { SharedComponentsModule } from '../shared/shared.module';
+
+// import album components module
+import { AlbumComponentsModule } from '../albums/album.module';
 
 // import page components
 import { AboutPageComponent } from './about-page/about-page.component';
@@ -10,7 +17,13 @@ import { SigninComponent } from './signin-page/signin-page.component';
 import { SignupComponent } from './signup-page/signup-page.component';
 
 @NgModule({
-	imports: [CommonModule],
+	imports: [
+		CommonModule,
+		ReactiveFormsModule,
+		FormsModule,
+		SharedComponentsModule,
+		AlbumComponentsModule,
+	],
 	declarations: [
 		AboutPageComponent,
 		MainPageComponent,

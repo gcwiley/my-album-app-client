@@ -1,0 +1,16 @@
+<div class="col-md-5 col-lg-4 order-md-last">
+
+	<h4 class="d-flex justify-content-between align-items-center mb-3">
+		<span>Recently Added</span>
+	</h4>
+
+	<ul class="list-group mb-3" *ngFor="let recentAlbum of recentAlbums">
+		<li class="list-group-item d-flex justify-content-between lh-sm">
+			<div>
+				<h6 class="my-0">{{ recentAlbum.title }}</h6>
+				<small class="text-muted">{{ recentAlbum.artist }}</small>
+			</div>
+		</li>
+	</ul>
+	
+</div>

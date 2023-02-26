@@ -2,10 +2,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms'; // used for Template Forms
-import { ReactiveFormsModule } from '@angular/forms'; // used for reactive forms
+import { FormsModule, ReactiveFormsModule } from '@angular/forms'; // used for Template and reactive Forms
 import { HttpClientModule } from '@angular/common/http';
-import { MatNativeDateModule } from '@angular/material/core';
 
 // Set up Firebase
 import { AngularFireModule } from '@angular/fire/compat';
@@ -46,7 +44,6 @@ import { ImageComponentModule } from './images/image.module';
 		ReactiveFormsModule,
 		AppRoutingModule,
 		HttpClientModule,
-		MatNativeDateModule,
 		AngularFireModule.initializeApp(environment.firebase),
 		PipesModule,
 		PageComponentModule,

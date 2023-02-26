@@ -8,6 +8,8 @@ import { AlbumDetailsComponent } from './album-details/album-details.component';
 import { AlbumFormComponent } from './album-form/album-form.component';
 import { AlbumGridComponent } from './album-grid/album-grid.component';
 import { AlbumSearchComponent } from './album-search/album-search.component';
+import { RecentAlbumsComponent } from './recent-albums/recent-albums.component';
+// add new album components here
 
 @NgModule({
 	imports: [CommonModule, RouterModule, ReactiveFormsModule, FormsModule],
@@ -16,12 +18,14 @@ import { AlbumSearchComponent } from './album-search/album-search.component';
 		AlbumFormComponent,
 		AlbumGridComponent,
 		AlbumSearchComponent,
+		RecentAlbumsComponent,
 	],
 	exports: [
 		AlbumDetailsComponent,
 		AlbumFormComponent,
 		AlbumGridComponent,
 		AlbumSearchComponent,
+		RecentAlbumsComponent,
 	],
 })
 export class AlbumComponentsModule {}

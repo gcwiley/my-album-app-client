@@ -1,25 +1,56 @@
 <main class="container">
+	<!-- SIGN IN FORM -->
+	<div class="form-signin m-auto">
+		<form [formGroup]="signinForm" novalidate (ngSubmit)="onSubmitSignIn()">
+			<div class="text-center">
+				<img
+					class="mb-4"
+					src="../../../assets/logos/angular-logo.svg"
+					alt=""
+					width="72"
+					height="57"
+				/>
+				<h1 class="h3 mb-3 text-center">Please sign in</h1>
+			</div>
 
-	<div class="text-center">
-		<h3>Sign In</h3>
-		<p>Access your account</p>
+			<!-- EMAIL (email) -->
+			<div class="mb-3">
+				<label class="form-label">Email Address</label>
+				<input
+					type="email"
+					class="form-control"
+					formControlName="email"
+					placeholder="name@example.com"
+				/>
+			</div>
+
+			<!-- PASSWORD (password) -->
+			<div class="mb-3">
+				<label class="form-label">Password</label>
+				<input
+					type="password"
+					class="form-control"
+					placeholder="Password"
+				/>
+			</div>
+
+			<div class="d-grid gap-2">
+				<button class="btn btn-primary btn-sm" type="submit">
+					Sign In
+				</button>
+				<a href="/signup" class="btn btn-light btn-sm">Create an Account</a>
+			</div>
+		</form>
+
+		<hr />
+
+		<div class="d-grid gap-2">
+			<button class="btn btn-outline-primary btn-sm" type="submit" (ngSubmit)="SignInWithGoogleAuth()">
+				Sign In With Google
+			</button>
+			<button class="btn btn-outline-success btn-sm" type="submit" (ngSubmit)="SignInWithFacebookAuth()">
+				Sign In With Facebook
+			</button>
+		</div>
 	</div>
-
-	<!-- FORM -->
-	<form novalidate (ngSubmit)="onSubmitSignIn()">
-		<!-- EMAIL (email) -->
-		<div class="mb-3">
-			<label class="form-label">EMAIL ADDRESS</label>
-			<input type="email" class="form-control" formControlName="email" placeholder="name@example.com"/>
-		</div>
-
-		<!-- PASSWORD (password) -->
-		<div class="mb-3">
-			<label class="form-label">PASSWORD</label>
-			<input type="password" class="form-control" placeholder="Password"/>
-		</div>
-
-		<button type="submit" class="btn btn-primary">Sign In</button>
-		<button type="submit" class="btn btn-primary">Create an Account</button>
-	</form>
 </main>

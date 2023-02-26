@@ -18,6 +18,8 @@ export class AlbumFormComponent implements OnInit {
 	private id!: string | null;
 	private album!: Album;
 
+	genres = ['Rock', 'Alternative Rock'];
+
 	// create the album form
 	albumForm = this.formBuilder.group({
 		title: ['', Validators.required],

@@ -1,25 +1,38 @@
 <main class="container">
-
-	<div class="text-center">
-		<h3>Sign Up</h3>
-		<p>Create your account</p>
-	</div>
-
-	<!-- FORM -->
-	<form novalidate (ngSubmit)="createUserWithEmailAndPassword()">
+	<!-- SIGN UP FORM -->
+	<form class="form-signup m-auto" novalidate (ngSubmit)="createUserWithEmailAndPassword()">
+		<div class="text-center">
+			<img
+				class="mb-4"
+				src="../../../assets/logos/angular-logo.svg"
+				alt=""
+				width="72"
+				height="57"
+			/>
+			<h1 class="h3 mb-3 text-center">Create a new account.</h1>
+		</div>
 
 		<!-- EMAIL (email) -->
 		<div class="mb-3">
 			<label class="form-label">Email address</label>
-			<input type="email" class="form-control" formControlName="email" />
+			<input
+				type="email"
+				class="form-control"
+				formControlName="email"
+				placeholder="name@example.com"
+			/>
 		</div>
 
 		<!-- PASSWORD (password) -->
 		<div class="mb-3">
 			<label class="form-label">Password</label>
-			<input type="password" class="form-control" />
+			<input type="password" class="form-control" placeholder="Password" />
 		</div>
 
-		<button type="submit" class="btn btn-primary">Sign Up</button>
+		<div class="d-grid gap-2">
+			<button class="btn btn-primary btn-sm" type="submit">Sign Up</button>
+			<a href="/signin" class="btn btn-light btn-sm">Already have an account?</a>
+		</div>
+
 	</form>
 </main>

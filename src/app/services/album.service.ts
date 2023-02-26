@@ -55,6 +55,16 @@ export class AlbumService {
 		);
 	}
 
+	// GET: album count from database
+	getAlbumCount(): Observable<number> {
+		return this.http.get<number>('/api/album-count');
+	}
+
+	// GET: recent album created in database
+	getRecentAlbums(): Observable<Album[]> {
+		return this.http.get<Album[]>('/api/recent-albums');
+	}
+
 	// SAVE METHODS
 
 	// POST: Add a new Album to the server
