@@ -15,6 +15,8 @@ import { NotFoundPageComponent } from './not-found-page/not-found-page.component
 import { ResetPasswordPageComponent } from './reset-password-page/reset-password-page.component';
 import { SigninComponent } from './signin-page/signin-page.component';
 import { SignupComponent } from './signup-page/signup-page.component';
+import { CreatePageComponent } from './create-page/create-page.component';
+import { DetailsPageComponent } from './details-page/details-page.component';
 
 @NgModule({
 	imports: [
@@ -31,6 +33,8 @@ import { SignupComponent } from './signup-page/signup-page.component';
 		ResetPasswordPageComponent,
 		SigninComponent,
 		SignupComponent,
+  CreatePageComponent,
+  DetailsPageComponent,
 	],
 	exports: [
 		AboutPageComponent,

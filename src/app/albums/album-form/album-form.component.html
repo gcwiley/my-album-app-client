@@ -13,7 +13,6 @@
 		</div>
 
 		<div class="row g-4">
-
 			<app-recent-albums></app-recent-albums>
 
 			<!-- ALBUM FORM -->
@@ -21,6 +20,7 @@
 				<h4 class="mb-3">Album</h4>
 
 				<form [formGroup]="albumForm" novalidate (ngSubmit)="onSaveAlbum()">
+					
 					<div class="row g-3">
 						<!-- TITLE (title) -->
 						<div class="col-sm-12">

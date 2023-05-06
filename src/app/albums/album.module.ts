@@ -9,6 +9,7 @@ import { AlbumFormComponent } from './album-form/album-form.component';
 import { AlbumGridComponent } from './album-grid/album-grid.component';
 import { AlbumSearchComponent } from './album-search/album-search.component';
 import { RecentAlbumsComponent } from './recent-albums/recent-albums.component';
+import { AlbumCardComponent } from './album-card/album-card.component';
 // add new album components here
 
 @NgModule({
@@ -19,6 +20,7 @@ import { RecentAlbumsComponent } from './recent-albums/recent-albums.component';
 		AlbumGridComponent,
 		AlbumSearchComponent,
 		RecentAlbumsComponent,
+  AlbumCardComponent,
 	],
 	exports: [
 		AlbumDetailsComponent,

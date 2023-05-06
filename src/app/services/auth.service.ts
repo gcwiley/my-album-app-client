@@ -6,6 +6,7 @@ import firebase from 'firebase/compat/app';
 	providedIn: 'root',
 })
 export class AuthService {
+	
 	constructor(private auth: AngularFireAuth) {}
 
 	// creates a new user account associated with the specified email address and password

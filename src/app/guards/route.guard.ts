@@ -5,27 +5,27 @@ import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
 @Injectable({
-  providedIn: 'root',
+	providedIn: 'root',
 })
 export class RouteGuard implements CanActivate {
-  constructor(private auth: AngularFireAuth, private router: Router) {}
+	constructor(private auth: AngularFireAuth, private router: Router) {}
 
-  canActivate():
-    | Observable<boolean | UrlTree>
-    | Promise<boolean | UrlTree>
-    | boolean
-    | UrlTree {
-    // check to see if user is logged in
-    return this.auth.user.pipe(
-      map((user) => {
-        if (user) {
-          return true;
-        }
+	canActivate():
+		| Observable<boolean | UrlTree>
+		| Promise<boolean | UrlTree>
+		| boolean
+		| UrlTree {
+		// check to see if user is logged in
+		return this.auth.user.pipe(
+			map((user) => {
+				if (user) {
+					return true;
+				}
 
-        // if not authenticated, redirect to login page
-        this.router.navigateByUrl('/signin');
-        return false;
-      })
-    );
-  }
+				// if not authenticated, redirect to login page
+				this.router.navigateByUrl('/signin');
+				return false;
+			})
+		);
+	}
 }

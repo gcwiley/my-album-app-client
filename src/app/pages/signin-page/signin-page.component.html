@@ -2,6 +2,7 @@
 	<!-- SIGN IN FORM -->
 	<div class="form-signin m-auto">
 		<form [formGroup]="signinForm" novalidate (ngSubmit)="onSubmitSignIn()">
+			<!-- -->
 			<div class="text-center">
 				<img
 					class="mb-4"
@@ -45,10 +46,17 @@
 		<hr />
 
 		<div class="d-grid gap-2">
-			<button class="btn btn-outline-primary btn-sm" type="submit" (ngSubmit)="SignInWithGoogleAuth()">
+			<button
+				class="btn btn-outline-primary btn-sm"
+				type="submit"
+				(ngSubmit)="SignInWithGoogleAuth()">
 				Sign In With Google
 			</button>
-			<button class="btn btn-outline-success btn-sm" type="submit" (ngSubmit)="SignInWithFacebookAuth()">
+			<button
+				class="btn btn-outline-success btn-sm"
+				type="submit"
+				(ngSubmit)="SignInWithFacebookAuth()"
+			>
 				Sign In With Facebook
 			</button>
 		</div>
