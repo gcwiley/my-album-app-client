@@ -18,6 +18,7 @@ export class SignupComponent {
 		private authService: AuthService
 	) {}
 
+	// create the signup form
 	signupForm = this.formBuilder.group({
 		email: ['', Validators.required],
 		password: ['', Validators.required],

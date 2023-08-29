@@ -1,163 +1,266 @@
-<div class="container">
-	<main>
-		<div class="py-5 text-center">
-			<img
-				class="d-block mx-auto mb-4"
-				src="../../../assets/logos/angular-logo.svg"
-				alt=""
-				width="72"
-				height="57"
-			/>
-			<h2>Add New Album</h2>
-			<p class="lead">Add more text here</p>
-		</div>
+<form
+  [formGroup]="
+    albumForm
+  "
+  novalidate
+  (ngSubmit)="
+    onSaveAlbum()
+  ">
+  <div
+    class="row g-3">
+    <!-- TITLE (title) -->
+    <div
+      class="col-sm-12">
+      <label
+        class="form-label"
+        >Title</label
+      >
+      <input
+        type="text"
+        class="form-control"
+        required
+        formControlName="title" />
+      <small
+        class="text-muted"
+        >The
+        name
+        of
+        the
+        artist
+        of
+        the
+        album.</small
+      >
+      <div
+        class="invalid-feedback">
+        Please
+        provide
+        a
+        album
+        title.
+      </div>
+    </div>
 
-		<div class="row g-4">
-			<app-recent-albums></app-recent-albums>
+    <!-- ARTIST (artist) -->
+    <div
+      class="col-sm-12">
+      <label
+        class="form-label"
+        >Artist</label
+      >
+      <input
+        type="text"
+        class="form-control"
+        required
+        formControlName="artist" />
+      <small
+        class="text-muted"
+        >The
+        name
+        of
+        the
+        artist
+        of
+        the
+        album.</small
+      >
+      <div
+        class="invalid-feedback">
+        Please
+        provide
+        an
+        artist.
+      </div>
+    </div>
 
-			<!-- ALBUM FORM -->
-			<div class="col-md-7 col-lg-8">
-				<h4 class="mb-3">Album</h4>
+    <!-- LABEL (label) -->
+    <div
+      class="col-sm-6">
+      <label
+        class="form-label"
+        >Label</label
+      >
+      <input
+        type="text"
+        class="form-control"
+        required
+        formControlName="label" />
+      <small
+        class="text-muted"
+        >The
+        name
+        of
+        the
+        artist
+        of
+        the
+        album.</small
+      >
+      <div
+        class="invalid-feedback">
+        Please
+        provide
+        the
+        label
+        of
+        the
+        album.
+      </div>
+    </div>
 
-				<form [formGroup]="albumForm" novalidate (ngSubmit)="onSaveAlbum()">
-					
-					<div class="row g-3">
-						<!-- TITLE (title) -->
-						<div class="col-sm-12">
-							<label class="form-label">Title</label>
-							<input
-								type="text"
-								class="form-control"
-								required
-								formControlName="title"
-							/>
-							<small class="text-muted"
-								>The name of the artist of the album.</small
-							>
-							<div class="invalid-feedback">
-								Please provide a album title.
-							</div>
-						</div>
+    <!-- STUDIO (studio) -->
+    <div
+      class="col-sm-6">
+      <label
+        class="form-label"
+        >Studio</label
+      >
+      <input
+        type="text"
+        class="form-control"
+        required
+        formControlName="studio" />
+      <small
+        class="text-muted"
+        >The
+        name
+        of
+        the
+        record
+        studio
+        that
+        produced
+        the
+        album.</small
+      >
+      <div
+        class="invalid-feedback">
+        Please
+        provide
+        the
+        name
+        of
+        the
+        studio.
+      </div>
+    </div>
 
-						<!-- ARTIST (artist) -->
-						<div class="col-sm-12">
-							<label class="form-label">Artist</label>
-							<input
-								type="text"
-								class="form-control"
-								required
-								formControlName="artist"
-							/>
-							<small class="text-muted"
-								>The name of the artist of the album.</small
-							>
-							<div class="invalid-feedback">
-								Please provide an artist.
-							</div>
-						</div>
+    <!-- Genre (genre) -->
+    <div
+      class="col-sm-6">
+      <label
+        class="form-label"
+        >Genre</label
+      >
+      <select
+        class="form-select"
+        id="country"
+        required
+        formControlName="genre">
+        <option
+          *ngFor="
+            let genre of genres
+          "
+          [value]="
+            genre
+          ">
+          {{
+            genre
+          }}
+        </option>
+      </select>
+      <div
+        class="invalid-feedback">
+        Please
+        select
+        a
+        genre
+        for
+        the
+        album.
+      </div>
+    </div>
 
-						<!-- LABEL (label) -->
-						<div class="col-sm-6">
-							<label class="form-label">Label</label>
-							<input
-								type="text"
-								class="form-control"
-								required
-								formControlName="label"
-							/>
-							<small class="text-muted"
-								>The name of the artist of the album.</small
-							>
-							<div class="invalid-feedback">
-								Please provide the label of the album.
-							</div>
-						</div>
+    <!-- RELEASE DATE (releaseDate) -->
+    <div
+      class="col-sm-6">
+      <label
+        class="form-label"
+        >Release
+        Date</label
+      >
+      <input
+        type="text"
+        class="form-control"
+        required
+        formControlName="releaseDate" />
+      <small
+        class="text-muted"
+        >The
+        date
+        the
+        album
+        was
+        first
+        released.</small
+      >
+      <div
+        class="invalid-feedback">
+        Please
+        enter
+        the
+        date
+        the
+        album
+        was
+        released.
+      </div>
+    </div>
 
-						<!-- STUDIO (studio) -->
-						<div class="col-sm-6">
-							<label class="form-label">Studio</label>
-							<input
-								type="text"
-								class="form-control"
-								required
-								formControlName="studio"
-							/>
-							<small class="text-muted"
-								>The name of the record studio that produced the
-								album.</small
-							>
-							<div class="invalid-feedback">
-								Please provide the name of the studio.
-							</div>
-						</div>
+    <!-- SUMMARY (summary) -->
+    <div
+      class="col-12">
+      <label
+        class="form-label"
+        >Summary</label
+      >
+      <textarea
+        class="form-control"
+        required
+        formControlName="summary"
+        rows="6"
+        placeholder="Please provide a short summary of the album."></textarea>
+      <div
+        class="invalid-feedback">
+        Please
+        provide
+        a
+        summary
+        of
+        the
+        album.
+      </div>
+    </div>
+  </div>
 
-						<!-- Genre (genre) -->
-						<div class="col-sm-6">
-							<label class="form-label">Genre</label>
-							<select
-								class="form-select"
-								id="country"
-								required
-								formControlName="genre"
-							>
-								<option *ngFor="let genre of genres" [value]="genre">
-									{{ genre }}
-								</option>
-							</select>
-							<div class="invalid-feedback">
-								Please select a genre for the album.
-							</div>
-						</div>
+  <hr
+    class="my-4" />
 
-						<!-- RELEASE DATE (releaseDate) -->
-						<div class="col-sm-6">
-							<label class="form-label">Release Date</label>
-							<input
-								type="text"
-								class="form-control"
-								required
-								formControlName="releaseDate"
-							/>
-							<small class="text-muted"
-								>The date the album was first released.</small
-							>
-							<div class="invalid-feedback">
-								Please enter the date the album was released.
-							</div>
-						</div>
-
-						<!-- SUMMARY (summary) -->
-						<div class="col-12">
-							<label class="form-label">Summary</label>
-							<textarea
-								class="form-control"
-								required
-								formControlName="summary"
-								rows="6"
-								placeholder="Please provide a short summary of the album."
-							></textarea>
-							<div class="invalid-feedback">
-								Please provide a summary of the album.
-							</div>
-						</div>
-					</div>
-
-					<hr class="my-4" />
-
-					<div class="d-grid gap-2 d-md-flex justify-content-md-start">
-						<button
-							class="btn btn-sm btn-primary me-md-2"
-							type="submit"
-							[disabled]="!albumForm.valid"
-						>
-							Add Album
-						</button>
-						<button class="btn btn-sm btn-danger" type="button">
-							Clear
-						</button>
-					</div>
-				</form>
-			</div>
-		</div>
-	</main>
-</div>
+  <div
+    class="d-grid gap-2 d-md-flex justify-content-md-start">
+    <button
+      class="btn btn-sm btn-primary me-md-2"
+      type="submit"
+      [disabled]="
+        !albumForm.valid
+      ">
+      Add
+      Album
+    </button>
+    <button
+      class="btn btn-sm btn-danger"
+      type="button">
+      Clear
+    </button>
+  </div>
+</form>

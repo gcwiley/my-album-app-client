@@ -1,27 +1,32 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-// import route guard
+// import the route guard
 import { RouteGuard } from './guards/route.guard';
 
-// album components
-import { AlbumFormComponent } from './albums/album-form/album-form.component';
-import { AlbumGridComponent } from './albums/album-grid/album-grid.component';
-import { AlbumDetailsComponent } from './albums/album-details/album-details.component';
-
-// auth components
-import { SigninComponent } from './pages/signin-page/signin-page.component';
-import { SignupComponent } from './pages/signup-page/signup-page.component';
-import { ResetPasswordPageComponent } from './pages/reset-password-page/reset-password-page.component';
-
-// About Page
+// import the about page
 import { AboutPageComponent } from './pages/about-page/about-page.component';
 
-// upload image page
-import { ImageUploadComponent } from './images/image-upload/image-upload.component';
+// import the create page
+import { CreatePageComponent } from './pages/create-page/create-page.component';
 
-// Not Found Page
+// import the details page
+import { DetailsPageComponent } from './pages/details-page/details-page.component';
+
+// import the main page
+import { MainPageComponent } from './pages/main-page/main-page.component';
+
+// import the not found page
 import { NotFoundPageComponent } from './pages/not-found-page/not-found-page.component';
+
+// import the reset password page
+import { ResetPasswordPageComponent } from './pages/reset-password-page/reset-password-page.component';
+
+// import the sign in page
+import { SigninComponent } from './pages/signin-page/signin-page.component';
+
+// import the sign up page
+import { SignupComponent } from './pages/signup-page/signup-page.component';
 
 const routes: Routes = [
 	{ path: '', redirectTo: '/albums', pathMatch: 'full' },

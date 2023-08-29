@@ -48,14 +48,20 @@
 			<!-- AUTH -->
 			<ng-container *ngIf="auth.user | async as user; else showSignIn">
 				<div class="d-grid gap-2">
-					<button class="btn btn-light btn-sm">{{ user.displayName }}</button>
-					<button class="btn btn-warning btn-sm" (click)="onClickSignOut()">Sign Out</button>
+					<button class="btn btn-light btn-sm">
+						{{ user.displayName }}
+					</button>
+					<button
+						class="btn btn-warning btn-sm"
+						(click)="onClickSignOut()"
+					>
+						Sign Out
+					</button>
 				</div>
 			</ng-container>
 			<ng-template #showSignIn>
 				<a class="btn btn-warning btn-sm" href="/signin">Sign In</a>
 			</ng-template>
-
 		</div>
 	</div>
 </header>

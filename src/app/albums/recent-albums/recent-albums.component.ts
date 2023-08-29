@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 
-// import album service
+// import the album service
 import { AlbumService } from 'src/app/services/album.service';
 
-// import album interface
+// import the album interface
 import { Album } from 'src/app/types/album.interface';
 
 @Component({

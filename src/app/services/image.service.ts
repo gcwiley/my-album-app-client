@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
-// impor the image type
+// import the image interface
 import { Image } from '../types/image.interface';
 
 @Injectable({

@@ -1,15 +1,17 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
-import { Album } from '../../types/album.interface';
-
-// import album service
+// import the album service
 import { AlbumService } from '../../services/album.service';
+
+// import the album interface
+import { Album } from '../../types/album.interface';
 
 @Component({
 	selector: 'app-album-details',
 	templateUrl: './album-details.component.html',
 	styleUrls: ['./album-details.component.scss'],
+	standalone: true,
 })
 export class AlbumDetailsComponent implements OnInit {
 	isLoading = true;

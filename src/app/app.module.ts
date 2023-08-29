@@ -29,7 +29,7 @@ import { SharedComponentsModule } from './shared/shared.module';
 // Album Components
 import { AlbumComponentsModule } from './albums/album.module';
 
-// Comment Components
+// 
 import { CommentComponentModule } from './comments/comment.module';
 
 // Image Component

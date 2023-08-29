@@ -4,14 +4,9 @@ import { Observable, of } from 'rxjs';
 import { catchError, tap } from 'rxjs/operators';
 
 // import the issue interface
-import { Issue } from 
+import { Issue } from '../types/issue.interface';
 
 @Injectable({
 	providedIn: 'root',
 })
-export class IssueService {
-
-
-
-
-}
+export class IssueService {}

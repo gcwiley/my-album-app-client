@@ -2,16 +2,17 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { ActivatedRoute, ParamMap, Router } from '@angular/router';
 
-// Import Album Service
+// import album service
 import { AlbumService } from '../../services/album.service';
 
-// Import Album Type
+// import album interface
 import { Album } from '../../types/album.interface';
 
 @Component({
 	selector: 'app-album-form',
 	templateUrl: './album-form.component.html',
 	styleUrls: ['./album-form.component.scss'],
+	standalone: true,
 })
 export class AlbumFormComponent implements OnInit {
 	public mode = 'create';
